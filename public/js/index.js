@@ -3,6 +3,12 @@ var $exampleText = $("#example-text");
 var $exampleDescription = $("#example-description");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
+$(document).ready(function(){
+  $('.sidenav').sidenav();
+  $('.modal').modal();
+  // $('input#input_text, textarea#textarea2').characterCounter();
+});
+      
 
 // The API object contains methods for each kind of request we'll make
 var API = {

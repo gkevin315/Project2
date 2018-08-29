@@ -1,3 +1,11 @@
 .list-group-item {
   line-height: 2.5;
 }
+
+#signup {
+  margin-top: 10%;
+}
+
+.channelsArea {
+  margin-top: 50px;
+}
