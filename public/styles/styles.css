@@ -9,3 +9,25 @@
 .channelsArea {
   margin-top: 50px;
 }
+
+#leftInitial{
+  border-width: 10px;
+  background-color: dimgrey;
+  height: 100vh;
+  background-size: cover;
+  border-style: solid;
+}
+
+#rightInitial {
+  background-color: bisque;
+  height: -webkit-fill-available;
+}
+
+#sideNavBtn{
+  display: flex;
+  position: relative;
+  top: -40px;
+  color: black;
+  z-index: 2;
+  margin-left: 20px;
+}

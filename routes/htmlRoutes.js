@@ -15,6 +15,10 @@ module.exports = function(app) {
     res.render("signup");
   })
 
+  app.get("/initial", function(req, res){
+    res.render("initial");
+  })
+
   // Load example page and pass in an example by id
   app.get("/example/:id", function(req, res) {
     db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
