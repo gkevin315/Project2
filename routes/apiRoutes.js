@@ -1,39 +1,39 @@
 var db = require("../models");
 
 module.exports = function (app) {
-  // Get all examples
-  app.get("/api/examples", function (req, res) {
-    db.Example.findAll({}).then(function (dbExamples) {
-      res.json(dbExamples);
+  // Get all authors
+  app.get("/api/authors", function (req, res) {
+    db.Author.findAll({}).then(function (dbAuthors) {
+      res.json(dbAuthors);
     });
   });
 
   // Get one example
-  app.get("/api/examples/:id", function (req, res) {
-    db.Example.findOne({
+  app.get("/api/authors/:id", function (req, res) {
+    db.Author.findOne({
       where: {
         id: req.params.id
       }
-    }).then(function (dbExample) {
-      res.json(dbExample);
+    }).then(function (dbAuthor) {
+      res.json(dbAuthor);
     });
   });
 
   // Create a new example
-  app.post("/api/examples", function (req, res) {
-    db.Example.create(req.body).then(function (dbExample) {
-      res.json(dbExample);
+  app.post("/api/authors", function (req, res) {
+    db.Author.create(req.body).then(function (dbAuthor) {
+      res.json(dbAuthor);
     });
   });
 
   // Delete an example by id
-  app.delete("/api/examples/:id", function (req, res) {
-    db.Example.destroy({
+  app.delete("/api/authors/:id", function (req, res) {
+    db.Author.destroy({
       where: {
         id: req.params.id
       }
-    }).then(function (dbExample) {
-      res.json(dbExample);
+    }).then(function (dbAuthor) {
+      res.json(dbAuthor);
     });
   });
 
