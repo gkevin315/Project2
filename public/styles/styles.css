@@ -48,3 +48,7 @@
 #postTextArea{
   height: 400px;
 }
+
+#category{
+  display: flex;
+}

@@ -282,14 +282,21 @@
           <div class="card-content white-text" id="createPostCard">
             <span class="card-title">Create Post</span>
             <div class="row">
+              <form id="posting">
               <div class="postContent">
-                <textarea id="postTextArea"></textarea>
-                <div class="categoryDropdown">
-                  Category
+                <textarea class="form-control" rows="10" id="postTextArea"></textarea>
+                <div class="form-group" id="categoryDropdown">
+                  <label for="category">Select Category:</label>
+                  <select id="category">
+                    <option value="Motivation">Motivation</option>
+                    <option value="Persuasion">Persuasion</option>
+                    <option value="Coding">Coding</option>
+                  </select>
                 </div>
                 <button class="btn" type="submit">Create Post</button>
               </div>
             </div>
+            </form>
 
         </div>
       </div>
