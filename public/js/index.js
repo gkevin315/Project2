@@ -6,6 +6,8 @@ var $exampleList = $("#example-list");
 $(document).ready(function(){
   $('.sidenav').sidenav();
   $('.modal').modal();
+  $('.dropdown-trigger').dropdown();
+
   // $('input#input_text, textarea#textarea2').characterCounter();
 });
       

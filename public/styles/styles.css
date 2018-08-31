@@ -32,3 +32,19 @@
   margin-left: 20px;
   width: 25px;
 }
+
+#createPostArea{
+  overflow-y: auto;
+  /* overflow-x: hidden; */
+  position: fixed;
+  left: 63.3%;
+  /* min-height: 500px; */
+}
+
+#createPostCard{
+  height: auto;
+}
+
+#postTextArea{
+  height: 400px;
+}
