@@ -15,19 +15,19 @@
     {{!-- log in modal --}}
     <div id="modal1" class="modal">
       <div class="modal-content">
-              <div class="row">
-                <div class="input-field col s12">
-                  <input id="email" type="email" class="validate">
-                  <label for="email" class="active">Email</label>
-                </div>
-              </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="email" type="email" class="validate">
+            <label for="email" class="active">Email</label>
+          </div>
+        </div>
 
-              <div class="row">
-                <div class="input-field col s12">
-                  <input id="password" type="password" class="validate">
-                  <label for="password" class="active">Password</label>
-                </div>
-              </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="password" type="password" class="validate">
+            <label for="password" class="active">Password</label>
+          </div>
+        </div>
       </div>
       <div class="modal-footer">
         <a href="#!" class="modal-close waves-effect waves-green btn-flat">Sign In</a>
@@ -63,7 +63,7 @@
                   <label for="password" class="active">Password</label>
                 </div>
               </div>
-              
+
 
               <div class="row">
                 <div class="input-field col s12">
@@ -100,17 +100,17 @@
     </li>
     <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
     <li><a href="#!">Second Link</a></li>
-      <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Drop Me!</a>
+    <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Drop Me!</a>
 
-  <!-- Dropdown Structure -->
-  <ul id='dropdown1' class='dropdown-content'>
-    <li><a href="#!">one</a></li>
-    <li><a href="#!">two</a></li>
-    <li class="divider" tabindex="-1"></li>
-    <li><a href="#!">three</a></li>
-    <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
-    <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
-  </ul>
+    <!-- Dropdown Structure -->
+    <ul id='dropdown1' class='dropdown-content'>
+      <li><a href="#!">one</a></li>
+      <li><a href="#!">two</a></li>
+      <li class="divider" tabindex="-1"></li>
+      <li><a href="#!">three</a></li>
+      <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
+      <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
+    </ul>
     <li>
       <div class="divider"></div>
     </li>
@@ -152,124 +152,34 @@
 
           <div class="col s12">
             <div class="card">
-              <div class="card-image">
-                <img src="images/sample-1.jpg">
-                <span class="card-title">Card Title</span>
-              </div>
-              <div class="card-content">
+              <div class="card-content" id="pagePost">
                 <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I
                   require little markup to use effectively.</p>
               </div>
-              <div class="card-action">
-                <a href="#">This is a link</a>
-              </div>
             </div>
           </div>
+
+          {{!-- TEST AREA!!! --}}
           <div class="col s12">
             <div class="card">
-              <div class="card-image">
-                <img src="images/sample-1.jpg">
-                <span class="card-title">Card Title</span>
-              </div>
-              <div class="card-content">
+              <div class="card-content" id="pagePost">
+                <h3>Examples:</h3>
+                <ul id="example-list" class="list-group">
+                  {{#each examples}}
+                  <li data-id="{{this.id}}" class="list-group-item">
+                    <a href="example/{{this.id}}">{{this.text}}</a>
+                    <button class="btn btn-danger float-right delete">ｘ</button>
+                  </li>
+                  {{/each}}
+                </ul>
                 <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I
                   require little markup to use effectively.</p>
               </div>
-              <div class="card-action">
-                <a href="#">This is a link</a>
-              </div>
             </div>
           </div>
-          <div class="col s12">
-            <div class="card">
-              <div class="card-image">
-                <img src="images/sample-1.jpg">
-                <span class="card-title">Card Title</span>
-              </div>
-              <div class="card-content">
-                <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I
-                  require little markup to use effectively.</p>
-              </div>
-              <div class="card-action">
-                <a href="#">This is a link</a>
-              </div>
-            </div>
-          </div>
-          <div class="col s12">
-            <div class="card">
-              <div class="card-image">
-                <img src="images/sample-1.jpg">
-                <span class="card-title">Card Title</span>
-              </div>
-              <div class="card-content">
-                <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I
-                  require little markup to use effectively.</p>
-              </div>
-              <div class="card-action">
-                <a href="#">This is a link</a>
-              </div>
-            </div>
-          </div>
-          <div class="col s12">
-            <div class="card">
-              <div class="card-image">
-                <img src="images/sample-1.jpg">
-                <span class="card-title">Card Title</span>
-              </div>
-              <div class="card-content">
-                <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I
-                  require little markup to use effectively.</p>
-              </div>
-              <div class="card-action">
-                <a href="#">This is a link</a>
-              </div>
-            </div>
-          </div>
-          <div class="col s12">
-            <div class="card">
-              <div class="card-image">
-                <img src="images/sample-1.jpg">
-                <span class="card-title">Card Title</span>
-              </div>
-              <div class="card-content">
-                <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I
-                  require little markup to use effectively.</p>
-              </div>
-              <div class="card-action">
-                <a href="#">This is a link</a>
-              </div>
-            </div>
-          </div>
-          <div class="col s12">
-            <div class="card">
-              <div class="card-image">
-                <img src="images/sample-1.jpg">
-                <span class="card-title">Card Title</span>
-              </div>
-              <div class="card-content">
-                <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I
-                  require little markup to use effectively.</p>
-              </div>
-              <div class="card-action">
-                <a href="#">This is a link</a>
-              </div>
-            </div>
-          </div>
-          <div class="col s12">
-            <div class="card">
-              <div class="card-image">
-                <img src="images/sample-1.jpg">
-                <span class="card-title">Card Title</span>
-              </div>
-              <div class="card-content">
-                <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I
-                  require little markup to use effectively.</p>
-              </div>
-              <div class="card-action">
-                <a href="#">This is a link</a>
-              </div>
-            </div>
-          </div>
+
+          {{!-- TEST AREA!!! --}}
+
 
 
         </div>
@@ -283,29 +193,26 @@
             <span class="card-title">Create Post</span>
             <div class="row">
               <form id="posting">
-              <div class="postContent">
-                <textarea class="form-control" rows="10" id="postTextArea"></textarea>
-                <div class="form-group" id="categoryDropdown">
-                  <label for="category">Select Category:</label>
-                  <select id="category">
-                    <option value="Motivation">Motivation</option>
-                    <option value="Persuasion">Persuasion</option>
-                    <option value="Coding">Coding</option>
-                  </select>
+                <div class="form-group">
+                  <label for="postContent"></label>
+                  <textarea class="form-control" rows="10" id="postContent" aria-describedby="postContent" placeholder="Enter Example Description"></textarea>
+                  <div class="form-group" id="categoryDropdown">
+                    <label for="category">Select Category:</label>
+                    <input type="text" id="category" class="form-control" aria-describedby="category" placeholder="Enter Category">
+                  </div>
+                  <button class="btn" id="submit" type="submit">Create Post</button>
                 </div>
-                <button class="btn" type="submit">Create Post</button>
-              </div>
             </div>
             </form>
 
+          </div>
         </div>
+
+
+
       </div>
-
-
-
     </div>
   </div>
-</div>
 </div>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> {{!--

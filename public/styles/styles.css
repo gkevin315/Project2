@@ -45,8 +45,8 @@
   height: auto;
 }
 
-#postTextArea{
-  height: 400px;
+#postContent{
+  height: 50%;
 }
 
 #category{
