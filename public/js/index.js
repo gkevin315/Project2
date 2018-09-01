@@ -1,8 +1,9 @@
 // Get references to page elements
-var $category = $("#title");
+var $title = $("#title");
 var $postContent = $("#postContent");
+var $category = $("#category");
 var $submitBtn = $("#submit");
-var $exampleList = $("#example-list");
+var $postList = $("#post-list");
 $(document).ready(function(){
   $('.sidenav').sidenav();
   $('.modal').modal();
@@ -62,8 +63,8 @@ var refreshExamples = function() {
       return $li;
     });
 
-    $exampleList.empty();
-    $exampleList.append($posts);
+    $postList.empty();
+    $postList.append($posts);
   });
 };
 
@@ -73,11 +74,12 @@ var handleFormSubmit = function(event) {
   event.preventDefault();
 
   var post = {
-    title: $category.val().trim(),
-    body: $postContent.val().trim()
+    title: $title.val().trim(),
+    body: $postContent.val().trim(),
+    category: $category.val().trim()
   };
 
-  if (!(post.title && post.body)) {
+  if (!(post.title && post.body && post.category)) {
     alert("You must enter an example text and description!");
     return;
   }
@@ -86,8 +88,9 @@ var handleFormSubmit = function(event) {
     refreshExamples();
   });
 
-  $category.val("");
+  $title.val("");
   $postContent.val("");
+  $category.val("");
 };
 
 // handleDeleteBtnClick is called when an example's delete button is clicked
@@ -104,4 +107,4 @@ var handleDeleteBtnClick = function() {
 
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit, console.log("submit btn working"));
-$exampleList.on("click", ".delete", handleDeleteBtnClick);
+$postList.on("click", ".delete", handleDeleteBtnClick);

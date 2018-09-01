@@ -121,37 +121,55 @@
 
   <div class="container">
     <div class="row">
-      
+
 
 
       <div class="channelsArea">
-        <div class="col s8">
+        <div class="col s12">
 
-          <div class="col s12">
-            <div class="card">
-              <div class="card-content" id="pagePost">
-                <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I
-                  require little markup to use effectively.</p>
-              </div>
-            </div>
-          </div>
 
           {{!-- TEST AREA!!! --}}
-          <div class="col s12">
+          <div class="col s8">
             <div class="card">
               <div class="card-content" id="pagePost">
                 <h3>Examples:</h3>
-                <ul id="example-list" class="list-group">
-                  {{#each posts}}
+                <ul id="post-list" class="list-group">
+                  {{#each post}}
                   <li data-id="{{this.id}}" class="list-group-item">
                     <a href="post/{{this.id}}">{{this.text}}</a>
                     <button class="btn btn-danger float-right delete">ｘ</button>
                   </li>
                   {{/each}}
                 </ul>
-                <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I
-                  require little markup to use effectively.</p>
+                {{!-- <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I --}}
+                  {{!-- require little markup to use effectively.</p> --}}
               </div>
+            </div>
+          </div>
+          <div class="col s4" id="createPostArea">
+            <div class="card blue-grey darken-1">
+              <div class="card-content white-text" id="createPostCard">
+                <span class="card-title">Create Post</span>
+                <div class="row">
+                  <form action="POST">
+                    <div class="form-group" id="categoryDropdown">
+                      <label for="title">Select Category:</label>
+                      <input type="text" id="title" class="form-control" aria-describedby="title" placeholder="Enter Category">
+                    </div>
+                    <div class="form-group">
+                      <label for="postContent"></label>
+                      <textarea class="form-control" rows="10" id="postContent" aria-describedby="postContent" placeholder="Enter Example Description"></textarea>
+                    </div>
+                    <div class="form-group" id="categoryDropdown">
+                      <label for="category">Select Category:</label>
+                      <input type="text" id="category" class="form-control" aria-describedby="category" placeholder="Enter Category">
+                    </div>
+                  
+                  <button class="btn" id="submit" type="submit">Create Post</button>
+                  </form>
+                </div>
+              </div>
+
             </div>
           </div>
 
@@ -164,36 +182,17 @@
 
       area below is designated for creating posts --}}
 
-      <div class="col s4" id="createPostArea">
-        <div class="card blue-grey darken-1">
-          <div class="card-content white-text" id="createPostCard">
-            <span class="card-title">Create Post</span>
-            <div class="row">
-              <form action="POST">
-                <div class="form-group">
-                  <label for="postContent"></label>
-                  <textarea class="form-control" rows="10" id="postContent" aria-describedby="postContent" placeholder="Enter Example Description"></textarea>
-                  <div class="form-group" id="categoryDropdown">
-                    <label for="title">Select Category:</label>
-                    <input type="text" id="title" class="form-control" aria-describedby="title" placeholder="Enter Category">
-                  </div>
-              </form>
-              <button class="btn" id="submit" type="submit">Create Post</button>
-              </div>
-            </div>
-
-          </div>
-        </div>
 
 
 
 
-      </div>
+
     </div>
   </div>
+</div>
 
 
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
-  <script src="/js/index.js"></script>
-  <script src="/js/materialize.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+<script src="/js/index.js"></script>
+<script src="/js/materialize.js"></script>
