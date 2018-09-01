@@ -41,7 +41,7 @@ var API = {
 // refreshExamples gets new examples from the db and repopulates the list
 var refreshExamples = function() {
   API.getExamples().then(function(data) {
-    var posts = data.map(function(post) {
+    var $posts = data.map(function(post) {
       var $a = $("<a>")
         .text(post.text)
         .attr("href", "/post/" + post.id);
@@ -63,7 +63,7 @@ var refreshExamples = function() {
     });
 
     $exampleList.empty();
-    $exampleList.append(posts);
+    $exampleList.append($posts);
   });
 };
 
