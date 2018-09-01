@@ -3,11 +3,11 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.Author.findAll({}).then(function(dbAuthors, dbPost) {
+    db.Author.findAll({}).then(function(dbAuthors, dbPosts) {
       res.render("index", {
         msg: "Welcome!",
         authors: dbAuthors,
-        // posts: dbPost
+        posts: dbPosts
       });
     });
   });

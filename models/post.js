@@ -2,19 +2,19 @@ module.exports = function (sequelize, DataTypes) {
     var Post = sequelize.define("Post", {
         title: {
             type: DataTypes.STRING,
-            allowNull: true,
+            allowNull: false,
             validate: {
                 len: [1, 160]
             }, 
-            // defaultValue: "NOT WORKING"
+            defaultValue: "NOT WORKING"
         },
         body: {
-            type: DataTypes.STRING,
-            allowNull: true,
+            type: DataTypes.TEXT,
+            allowNull: false,
             validate: {
                 len: [1, 160]
             }, 
-            // defaultValue: "NOT WORKING"
+            defaultValue: "NOT WORKING"
         },
 
         category: {

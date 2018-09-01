@@ -43,7 +43,7 @@ var refreshExamples = function() {
   API.getExamples().then(function(data) {
     var posts = data.map(function(post) {
       var $a = $("<a>")
-        .title(post.title)
+        .text(post.text)
         .attr("href", "/post/" + post.id);
 
       var $li = $("<li>")
