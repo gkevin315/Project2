@@ -121,31 +121,8 @@
 
   <div class="container">
     <div class="row">
-      {{!--
-      <div class="col s12">
-        <h1>{{msg}}</h1>
-      </div>
-      <h2>This is our Home Page!</h2>
-      <form class="clearfix mb-4" action="POST">
-        <div class="form-group">
-          <label for="example-text">Example Text</label>
-          <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
-        </div>
-        <div class="form-group">
-          <label for="example-description">Example Description</label>
-          <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
-        </div>
-        <button id="submit" class="btn btn-primary float-right">Submit</button>
-      </form>
-      <h3>Examples:</h3>
-      <ul id="example-list" class="list-group">
-        {{#each examples}}
-        <li data-id="{{this.id}}" class="list-group-item">
-          <a href="example/{{this.id}}">{{this.text}}</a>
-          <button class="btn btn-danger float-right delete">ｘ</button>
-        </li>
-        {{/each}}
-      </ul>--}}
+      
+
 
       <div class="channelsArea">
         <div class="col s8">
@@ -165,9 +142,9 @@
               <div class="card-content" id="pagePost">
                 <h3>Examples:</h3>
                 <ul id="example-list" class="list-group">
-                  {{#each examples}}
+                  {{#each posts}}
                   <li data-id="{{this.id}}" class="list-group-item">
-                    <a href="post/{{this.id}}">{{this.text}}</a>
+                    <a href="posts/{{this.id}}">{{this.title}}</a>
                     <button class="btn btn-danger float-right delete">ｘ</button>
                   </li>
                   {{/each}}
@@ -178,44 +155,45 @@
             </div>
           </div>
 
-          {{!-- TEST AREA!!! --}}
+          {{!-- TEST AREA!!!
 
 
 
         </div>
       </div>
 
-      {{!-- area below is designated for creating posts --}}
+      area below is designated for creating posts --}}
 
       <div class="col s4" id="createPostArea">
         <div class="card blue-grey darken-1">
           <div class="card-content white-text" id="createPostCard">
             <span class="card-title">Create Post</span>
             <div class="row">
-              <form id="posting">
+              <form action="POST">
                 <div class="form-group">
                   <label for="postContent"></label>
                   <textarea class="form-control" rows="10" id="postContent" aria-describedby="postContent" placeholder="Enter Example Description"></textarea>
                   <div class="form-group" id="categoryDropdown">
-                    <label for="category">Select Category:</label>
-                    <input type="text" id="category" class="form-control" aria-describedby="category" placeholder="Enter Category">
+                    <label for="title">Select Category:</label>
+                    <input type="text" id="title" class="form-control" aria-describedby="category" placeholder="Enter Category">
                   </div>
-                  <button class="btn" id="submit" type="submit">Create Post</button>
-                </div>
+              </form>
+              <button class="btn" id="submit" type="submit">Create Post</button>
+              </div>
             </div>
-            </form>
 
           </div>
         </div>
 
 
 
+
       </div>
     </div>
   </div>
-</div>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> {{!--
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>--}}
-<script src="/js/index.js"></script>
-<script src="/js/materialize.js"></script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+  <script src="/js/index.js"></script>
+  <script src="/js/materialize.js"></script>
