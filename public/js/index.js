@@ -1,8 +1,9 @@
 // Get references to page elements
-var $category = $("#category");
+var $title = $("#title");
 var $postContent = $("#postContent");
+var $category = $("#category");
 var $submitBtn = $("#submit");
-var $exampleList = $("#example-list");
+var $postList = $("#post-list");
 $(document).ready(function(){
   $('.sidenav').sidenav();
   $('.modal').modal();
@@ -14,14 +15,14 @@ $(document).ready(function(){
 
 // The API object contains methods for each kind of request we'll make
 var API = {
-  saveExample: function(example) {
+  saveExample: function(post) {
     return $.ajax({
       headers: {
         "Content-Type": "application/json"
       },
       type: "POST",
       url: "api/posts",
-      data: JSON.stringify(example)
+      data: JSON.stringify(post)
     });
   },
   getExamples: function() {
@@ -38,18 +39,20 @@ var API = {
   }
 };
 
+      console.log("posts working");
+
 // refreshExamples gets new examples from the db and repopulates the list
 var refreshExamples = function() {
   API.getExamples().then(function(data) {
-    var $examples = data.map(function(example) {
+    var $posts = data.map(function(post) {
       var $a = $("<a>")
-        .text(example.text)
-        .attr("href", "/post/" + example.id);
+        .text(post.text)
+        .attr("href", "/post/" + post.id);
 
       var $li = $("<li>")
         .attr({
           class: "list-group-item",
-          "data-id": example.id
+          "data-id": post.id
         })
         .append($a);
 
@@ -62,8 +65,8 @@ var refreshExamples = function() {
       return $li;
     });
 
-    $exampleList.empty();
-    $exampleList.append($examples);
+    $postList.empty();
+    $postList.append($posts);
   });
 };
 
@@ -72,22 +75,24 @@ var refreshExamples = function() {
 var handleFormSubmit = function(event) {
   event.preventDefault();
 
-  var example = {
-    text: $category.val().trim(),
-    description: $postContent.val().trim()
+  var post = {
+    title: $title.val().trim(),
+    body: $postContent.val().trim(),
+    category: $category.val().trim()
   };
 
-  if (!(example.text && example.description)) {
+  if (!(post.title && post.body && post.category)) {
     alert("You must enter an example text and description!");
     return;
   }
 
-  API.saveExample(example).then(function() {
+  API.saveExample(post).then(function() {
     refreshExamples();
   });
 
-  $category.val("");
+  $title.val("");
   $postContent.val("");
+  $category.val("");
 };
 
 // handleDeleteBtnClick is called when an example's delete button is clicked
@@ -104,4 +109,4 @@ var handleDeleteBtnClick = function() {
 
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit, console.log("submit btn working"));
-$exampleList.on("click", ".delete", handleDeleteBtnClick);
+$postList.on("click", ".delete", handleDeleteBtnClick);

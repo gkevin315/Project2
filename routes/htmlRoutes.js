@@ -6,10 +6,11 @@ var orm = require('../db/orm.js');
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.Author.findAll({}).then(function(dbAuthors) {
+    db.Author.findAll({}).then(function(dbAuthors, dbPosts) {
       res.render("index", {
         msg: "Welcome!",
-        authors: dbAuthors
+        authors: dbAuthors,
+        posts: dbPosts
       });
     });
   });
