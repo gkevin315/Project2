@@ -1,5 +1,5 @@
 // Get references to page elements
-var $category = $("category");
+var $category = $("#category");
 var $postContent = $("#postContent");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
@@ -44,7 +44,7 @@ var refreshExamples = function() {
     var $examples = data.map(function(example) {
       var $a = $("<a>")
         .text(example.text)
-        .attr("href", "/example/" + example.id);
+        .attr("href", "/post/" + example.id);
 
       var $li = $("<li>")
         .attr({
@@ -68,7 +68,7 @@ var refreshExamples = function() {
 };
 
 // handleFormSubmit is called whenever we submit a new example
-// Save the new example to the db and refresh the list
+// Saveß the new example to the db and refresh the list
 var handleFormSubmit = function(event) {
   event.preventDefault();
 
@@ -103,5 +103,5 @@ var handleDeleteBtnClick = function() {
 };
 
 // Add event listeners to the submit and delete buttons
-$submitBtn.on("click", handleFormSubmit);
+$submitBtn.on("click", handleFormSubmit, console.log("submit btn working"));
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
