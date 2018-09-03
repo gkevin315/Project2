@@ -76,5 +76,7 @@
 }
 
 #sideRobo{
-  margin: auto;
+  margin-left: 35px;
+  height: 100px;
+  position: relative;
 }
