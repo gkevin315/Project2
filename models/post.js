@@ -5,19 +5,25 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false,
             validate: {
                 len: [1, 160]
-            }
+            }, 
+            defaultValue: "NOT WORKING"
         },
         body: {
             type: DataTypes.TEXT,
             allowNull: false,
             validate: {
                 len: [1, 160]
-            }
+            }, 
+            defaultValue: "NOT WORKING"
         },
 
         category: {
             type: DataTypes.STRING,
-            defaultValue: "Personal"
+            allowNull: false,
+            validate: {
+                len: [1, 160]
+            },
+            // defaultValue: "Personal"
         }
 
     });
