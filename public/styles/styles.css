@@ -52,3 +52,25 @@
 #category{
   display: flex;
 }
+
+.delete{
+  position: sticky;
+  left: 70%;
+}
+
+.list-group-item{
+  border-style: solid;
+  border-width: 2px;
+  padding: 10px;
+  margin-top: 5px;
+}
+
+.card-content{
+  background-color: white;
+}
+
+#roboHead{
+  position: relative;
+  height: -webkit-fill-available;
+  padding: 2px;
+}

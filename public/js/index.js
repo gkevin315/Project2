@@ -46,15 +46,21 @@ var refreshExamples = function() {
   API.getExamples().then(function(data) {
     var $posts = data.map(function(post) {
       var $a = $("<a>")
-        .text(post.text)
+        .text(post.title)
         .attr("href", "/post/" + post.id);
+
+      var $b = $("<a>").text(post.body)
+      .attr("href", "/post/" + post.id);
+
+      var $c = $("<a>").text(post.category)
+      .attr("href", "/post/" + post.id);
 
       var $li = $("<li>")
         .attr({
           class: "list-group-item",
           "data-id": post.id
         })
-        .append($a);
+        .append("Title: ", $a, "<br> Post: ", $b, "<br> Category: ", $c);
 
       var $button = $("<button>")
         .addClass("btn btn-danger float-right delete")

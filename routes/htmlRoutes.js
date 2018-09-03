@@ -6,14 +6,26 @@ var orm = require('../db/orm.js');
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.Author.findAll({}).then(function(dbAuthors, dbPosts) {
+    db.Post.findAll({}).then(function(dbAuthors, dbPosts) {
       res.render("index", {
         msg: "Welcome!",
         authors: dbAuthors,
-        posts: dbPosts
+        post: dbPosts
       });
     });
-  });
+	});
+	
+	app.get("/post/:id", function(req, res){
+		db.Post.findOne({
+			where: {
+				id: req.params.id }
+			}).then(function(dbPost){
+				res.render("post", {
+					post: dbPost
+				});
+			});
+		});
+
 
   app.get("/signup", function(req, res){
     res.render("signup");
@@ -75,12 +87,12 @@ module.exports = function(app){
 		res.render('index', {
 			welcomeText: "Sign In",
 			actionBtn: 'signin',
-			message: req.flash('error')[0],
+			// message: req.flash('error')[0],
 			otherAction: "Signup"
 		});
 	});
 
-	app.get('/signin', function(req, res){
+	app.get('/login', function(req, res){
 		res.redirect('/')
 	});
 
