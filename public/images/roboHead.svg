@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1920 1080" style="enable-background:new 0 0 1920 1080;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;}
+	.st1{fill:none;stroke:#231F20;stroke-width:4;}
+	.st2{fill:none;stroke:#231F20;stroke-width:3.642;}
+	.st3{fill:none;stroke:#231F20;stroke-width:3.285;}
+	.st4{fill:none;stroke:#231F20;stroke-width:2.928;}
+	.st5{fill:none;stroke:#231F20;stroke-width:2.571;}
+	.st6{fill:none;stroke:#231F20;stroke-width:2.214;}
+	.st7{fill:none;stroke:#231F20;stroke-width:1.857;}
+	.st8{fill:none;stroke:#231F20;stroke-width:1.5;}
+	.st9{fill:#E5E5E5;}
+	.st10{fill:#FFFFFF;}
+	.st11{fill:url(#Undulating_Coarse_Lines);}
+</style>
+<pattern  width="60.8" height="72" patternUnits="userSpaceOnUse" id="Undulating_Coarse_Lines" viewBox="2 -72 60.8 72" style="overflow:visible;">
+	<g>
+		<rect x="2" y="-72" class="st0" width="60.8" height="72"/>
+		<g>
+			<line class="st1" x1="62.8" y1="-72" x2="62.8" y2="0"/>
+		</g>
+		<g>
+			<line class="st1" x1="2" y1="-72" x2="2" y2="0"/>
+			<line class="st2" x1="6.3" y1="-72" x2="6.3" y2="0"/>
+			<line class="st3" x1="10.7" y1="-72" x2="10.7" y2="0"/>
+			<line class="st4" x1="15" y1="-72" x2="15" y2="0"/>
+			<line class="st5" x1="19.4" y1="-72" x2="19.4" y2="0"/>
+			<line class="st6" x1="23.7" y1="-72" x2="23.7" y2="0"/>
+			<line class="st7" x1="28" y1="-72" x2="28" y2="0"/>
+			<line class="st1" x1="62.8" y1="-72" x2="62.8" y2="0"/>
+			<line class="st2" x1="58.4" y1="-72" x2="58.4" y2="0"/>
+			<line class="st3" x1="54.1" y1="-72" x2="54.1" y2="0"/>
+			<line class="st4" x1="49.7" y1="-72" x2="49.7" y2="0"/>
+			<line class="st5" x1="45.4" y1="-72" x2="45.4" y2="0"/>
+			<line class="st6" x1="41.1" y1="-72" x2="41.1" y2="0"/>
+			<line class="st7" x1="36.7" y1="-72" x2="36.7" y2="0"/>
+			<line class="st8" x1="32.4" y1="-72" x2="32.4" y2="0"/>
+		</g>
+		<g>
+			<line class="st1" x1="2" y1="-72" x2="2" y2="0"/>
+		</g>
+	</g>
+</pattern>
+<path class="st9" d="M885,601H527.5c-9,0-16.4-7.3-16.4-16.4V362.5c0-9,7.3-16.4,16.4-16.4H885c9,0,16.4,7.3,16.4,16.4v222.1
+	C901.4,593.7,894.1,601,885,601z"/>
+<path d="M647.9,519.3H582c-6.4,0-11.7-5.2-11.7-11.7v-70c0-6.4,5.2-11.7,11.7-11.7h65.9c6.4,0,11.7,5.2,11.7,11.7v70
+	C659.5,514.1,654.3,519.3,647.9,519.3z"/>
+<path class="st10" d="M626,488.2h-22.6c-2.3,0-4.2-1.9-4.2-4.2v-24.6c0-2.3,1.9-4.2,4.2-4.2H626c2.3,0,4.2,1.9,4.2,4.2v24.6
+	C630.2,486.3,628.3,488.2,626,488.2z"/>
+<path class="st10" d="M815.9,478.4h-16c-1.7,0-3-1.3-3-3v-17.3c0-1.7,1.3-3,3-3h16c1.7,0,3,1.3,3,3v17.3
+	C818.9,477.1,817.6,478.4,815.9,478.4z"/>
+<path d="M827.4,519.3h-65.9c-6.4,0-11.7-5.2-11.7-11.7v-70c0-6.4,5.2-11.7,11.7-11.7h65.9c6.4,0,11.7,5.2,11.7,11.7v70
+	C839.1,514.1,833.9,519.3,827.4,519.3z"/>
+<path class="st10" d="M805.5,488.2h-22.6c-2.3,0-4.2-1.9-4.2-4.2v-24.6c0-2.3,1.9-4.2,4.2-4.2h22.6c2.3,0,4.2,1.9,4.2,4.2v24.6
+	C809.8,486.3,807.9,488.2,805.5,488.2z"/>
+<rect id="bottomRectangle_1_" x="615.6" y="247" class="st11" width="183.2" height="38.9"/>
+<rect id="triangleRect_1_" x="589.9" y="293.7" class="st11" width="238.2" height="38.9"/>
+<path id="topTriangle_1_" class="st11" d="M707.1,126.3l20,159.5c0,0,0,0,0,0l-39.9,0c0,0,0,0,0,0L707.1,126.3
+	C707,126.3,707.1,126.3,707.1,126.3z"/>
+<polyline id="bottomRectangle_2_" points="503.4,553.8 471.1,554 470.1,398.4 502.4,398.2 "/>
+<path id="topTriangle_2_" d="M502.9,491.5l-131.7-15.9c-0.1,0-0.1-0.2,0-0.2l131.5-17.8"/>
+<path d="M388.2,463.7l0.1,23.1c0,2.2-1.8,4-4,4l-24.3,0.2c-2.2,0-4-1.8-4-4l-0.1-23.1c0-2.2,1.8-4,4-4l24.3-0.2
+	C386.4,459.7,388.2,461.5,388.2,463.7z"/>
+<polyline id="bottomRectangle_3_" points="908.8,395.4 941.1,395.2 942.2,550.8 909.9,551.1 "/>
+<path id="topTriangle_3_" d="M909.4,457.7l131.7,15.7c0.1,0,0.1,0.2,0,0.2l-131.4,18"/>
+<path d="M1024.1,485.4l-0.2-23.1c0-2.2,1.8-4,4-4l24.3-0.2c2.2,0,4,1.8,4,4l0.2,23.1c0,2.2-1.8,4-4,4l-24.3,0.2
+	C1025.9,489.4,1024.1,487.6,1024.1,485.4z"/>
+<path class="st11" d="M690.1,138.4l-0.2-23.1c0-2.2,1.8-4,4-4l24.3-0.2c2.2,0,4,1.8,4,4l0.2,23.1c0,2.2-1.8,4-4,4l-24.3,0.2
+	C691.9,142.4,690.1,140.6,690.1,138.4z"/>
+</svg>
