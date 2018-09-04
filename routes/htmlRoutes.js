@@ -1,62 +1,62 @@
 var db = require("../models");
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
-var orm = require('../db/orm.js');
+// var orm = require('../db/orm.js');
 
 var path = require("path");
 
-module.exports = function(app) {
-  // Load index page
-  app.get("/", function(req, res) {
+// module.exports = function(app) {
+//   // Load index page
+//   app.get("/", function(req, res) {
 
-    db.Post.findAll({}).then(function(dbPosts) {
-      res.render("index", {
-        msg: "Welcome!",
-        // authors: dbAuthors,
-        post: dbPosts
-      });
-    });
-	});
+//     db.Post.findAll({}).then(function(dbPosts) {
+//       res.render("index", {
+//         msg: "Welcome!",
+//         // authors: dbAuthors,
+//         post: dbPosts
+//       });
+//     });
+// 	});
 	
-	app.get("/post/:id", function(req, res){
-		db.Post.findOne({
-			where: {
-				id: req.params.id }
-			}).then(function(dbPost){
-				res.render("post", {
-					post: dbPost
-				});
-			});
-		});
+// 	app.get("/post/:id", function(req, res){
+// 		db.Post.findOne({
+// 			where: {
+// 				id: req.params.id }
+// 			}).then(function(dbPost){
+// 				res.render("post", {
+// 					post: dbPost
+// 				});
+// 			});
+// 		});
 
-		console.log("breaking");
+// 		console.log("breaking");
 
 
-  app.get("/signUp", function(req, res){
-    res.render("signup");
-  })
+//   app.get("/signUp", function(req, res){
+//     res.render("signup");
+//   })
 
-  app.get("/initial", function(req, res){
-    res.render("initial");
-  })
+//   app.get("/initial", function(req, res){
+//     res.render("initial");
+//   })
 
-  // Load example page and pass in an example by id
+//   // Load example page and pass in an example by id
 
-  app.get("/author/:id", function(req, res) {
-    db.Author.findOne({ where: { id: req.params.id } }).then(function(dbAuthor) {
-      res.render("author", {
-        author: dbAuthor
-      });
-    });
-  });
+//   app.get("/author/:id", function(req, res) {
+//     db.Author.findOne({ where: { id: req.params.id } }).then(function(dbAuthor) {
+//       res.render("author", {
+//         author: dbAuthor
+//       });
+//     });
+//   });
 
-  // Render 404 page for any unmatched routes
-  app.get("*", function(req, res) {
-    res.sendFile(path.join(__dirname, "../views/404.handlebars"));
-    res.render("404");
-  });
+//   // Render 404 page for any unmatched routes
+//   app.get("*", function(req, res) {
+//     res.sendFile(path.join(__dirname, "../views/404.handlebars"));
+//     res.render("404");
+//   });
   
-};
+// };
 
 
 //Setting the strategy for Passport
@@ -91,13 +91,45 @@ module.exports = function(app){
 	//GETs
 
 	app.get('/', function(req, res){
-		res.render('index', {
-			welcomeText: "Sign In",
-			actionBtn: 'signin',
-			// message: req.flash('error')[0],
-			otherAction: "Signup"
+
+			db.Post.findAll({}).then(function(dbPosts) {
+				res.render("index", {
+					msg: "Welcome!",
+					welcomeText: "Sign In",
+					actionBtn: 'signin',
+					// message: req.flash('error')[0],
+					otherAction: "Signup",
+					// authors: dbAuthors,
+					post: dbPosts
+				});
+			});
 		});
-	});
+	
+			app.get("/post/:id", function(req, res){
+		db.Post.findOne({
+			where: {
+				id: req.params.id }
+			}).then(function(dbPost){
+				res.render("post", {
+					post: dbPost
+				});
+			});
+		});
+
+		  app.get("/author/:id", function(req, res) {
+    db.Author.findOne({ where: { id: req.params.id } }).then(function(dbAuthor) {
+      res.render("author", {
+        author: dbAuthor
+      });
+    });
+  });
+
+  // Render 404 page for any unmatched routes
+  // app.get("*", function(req, res) {
+  //   res.sendFile(path.join(__dirname, "../views/404.handlebars"));
+  //   res.render("404");
+  // });
+	
 
 	app.get('/login', function(req, res){
 		res.redirect('/')
@@ -142,6 +174,11 @@ module.exports = function(app){
 			res.redirect('/');
 		});
 	});
+
+	// app.get("*", function(req, res) {
+  //   res.sendFile(path.join(__dirname, "../views/404.handlebars"));
+  //   res.render("404");
+  // });
 
 };
 

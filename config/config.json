@@ -5,7 +5,7 @@
     "database": "authordb",
     "host": "localhost",
     "dialect": "mysql",
-    "port": "3306"
+    "port": "8889"
   },
   "test": {
     "username": "root",
@@ -14,7 +14,7 @@
     "host": "localhost",
     "dialect": "mysql",
     "logging": false,
-    "port": "3306"
+    "port": "8889"
   },
   "production": {
     "use_env_variable": "JAWSDB_URL",
