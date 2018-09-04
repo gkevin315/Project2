@@ -26,8 +26,10 @@ module.exports = function(app) {
 			});
 		});
 
+		console.log("breaking");
 
-  app.get("/signup", function(req, res){
+
+  app.get("/signUp", function(req, res){
     res.render("signup");
   })
 

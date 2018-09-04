@@ -5261,6 +5261,7 @@ small {
   width: 150px;
   margin-left: 25%;
   margin-bottom: 50px;
+  margin: auto;
 }
 
 .btn:hover, .btn-large:hover, .btn-small:hover {

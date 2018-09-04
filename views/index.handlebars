@@ -30,7 +30,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Sign In</a>
+        <a href="/signIn" class="modal-close waves-effect waves-green btn-flat">Sign In</a>
       </div>
     </div>
 
@@ -74,7 +74,7 @@
 
 
             </form>
-            <button class="btn waves-effect waves-light" id="userSignUp" type="submit" name="action">Submit
+            <button class="btn waves-effect waves-light" href="/signUp" id="userSignUp" type="submit" name="action">Submit
               <i class="material-icons right">send</i>
             </button>
           </div>
@@ -98,7 +98,7 @@
         <a href="#email"><span class="email">jdandturk@gmail.com</span></a>
       </div>
     </li>
-    <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Categories!</a>
+    <a class='dropdown-trigger btn' id="dropbtn" href='#' data-target='dropdown1'>Categories!</a>
 
     <!-- Dropdown Structure -->
     <ul id='dropdown1' class='dropdown-content'>
@@ -110,7 +110,7 @@
       <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
     </ul>
     
-        <a class='dropdown-trigger btn' href='#' data-target='dropdown2'>Hot Topics!</a>
+        <a class='dropdown-trigger btn' id="dropbtn" href='#' data-target='dropdown2'>Hot Topics!</a>
 
     <!-- Dropdown Structure -->
     <ul id='dropdown2' class='dropdown-content'>
@@ -122,7 +122,7 @@
       <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
     </ul>
     
-        <a class='dropdown-trigger btn' href='#' data-target='dropdown3'>Support</a>
+        <a class='dropdown-trigger btn' id="dropbtn" href='#' data-target='dropdown3'>Support</a>
 
     <!-- Dropdown Structure -->
     <ul id='dropdown3' class='dropdown-content'>
@@ -145,7 +145,7 @@
         <div class="col s12">
 
           {{!-- TEST AREA!!! --}}
-          <div class="col s8" href="/">
+          <div class="col s8" href="/api/post">
             <div class="card">
               <div class="card-content" id="pagePost">
                 {{!-- <h3>Examples:</h3> --}}
@@ -189,7 +189,7 @@
                       <input type="text" id="category" class="form-control" aria-describedby="category" placeholder="Enter Category">
                     </div>
                   
-                  <button class="btn" id="submit" type="submit">Create Post</button>
+                  <button class="btn submitbtn" id="submit" type="submit">Create Post</button>
                   </form>
                 </div>
               </div>

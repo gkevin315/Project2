@@ -80,3 +80,25 @@
   height: 100px;
   position: relative;
 }
+
+.submitbtn{
+margin: auto;
+}
+
+.delete{
+  margin-top: -150px;
+}
+
+#dropbtn{
+  text-decoration: none;
+  color: #fff;
+  background-color: purple;
+  text-align: center;
+  letter-spacing: .5px;
+  -webkit-transition: background-color .2s ease-out;
+  transition: background-color .2s ease-out;
+  cursor: pointer;
+  width: 150px;
+  margin-left: 25%;
+  margin-bottom: 50px;
+}
