@@ -3,9 +3,12 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var orm = require('../db/orm.js');
 
+var path = require("path");
+
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
+
     db.Post.findAll({}).then(function(dbPosts) {
       res.render("index", {
         msg: "Welcome!",
@@ -38,6 +41,7 @@ module.exports = function(app) {
   })
 
   // Load example page and pass in an example by id
+
   app.get("/author/:id", function(req, res) {
     db.Author.findOne({ where: { id: req.params.id } }).then(function(dbAuthor) {
       res.render("author", {
@@ -48,6 +52,7 @@ module.exports = function(app) {
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
+    res.sendFile(path.join(__dirname, "../views/404.handlebars"));
     res.render("404");
   });
   
