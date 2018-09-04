@@ -5,11 +5,11 @@ var bodyParser = require("body-parser");
 var exphbs = require("express-handlebars");
 var db = require("./models");
 var orm = require('./db/orm.js');
-//var app = express();
+var app = express();
 var PORT = process.env.PORT || 8080;
 var passport = require('passport');
 var Strategy = require('passport-local').Strategy;
-var db = require('./db');
+var db = require('.db/db');
 
 // Configure the local strategy for use by Passport.
 //
