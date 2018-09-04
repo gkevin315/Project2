@@ -109,8 +109,8 @@
       <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
       <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
     </ul>
-    
-        <a class='dropdown-trigger btn' id="dropbtn" href='#' data-target='dropdown2'>Hot Topics!</a>
+
+    <a class='dropdown-trigger btn' id="dropbtn" href='#' data-target='dropdown2'>Hot Topics!</a>
 
     <!-- Dropdown Structure -->
     <ul id='dropdown2' class='dropdown-content'>
@@ -121,8 +121,8 @@
       <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
       <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
     </ul>
-    
-        <a class='dropdown-trigger btn' id="dropbtn" href='#' data-target='dropdown3'>Support</a>
+
+    <a class='dropdown-trigger btn' id="dropbtn" href='#' data-target='dropdown3'>Support</a>
 
     <!-- Dropdown Structure -->
     <ul id='dropdown3' class='dropdown-content'>
@@ -148,7 +148,8 @@
           <div class="col s8" href="/api/post">
             <div class="card">
               <div class="card-content" id="pagePost">
-                {{!-- <h3>Examples:</h3> --}}
+                {{!--
+                <h3>Examples:</h3> --}}
                 <ul id="post-list" class="list-group">
                   {{#each posts}}
                   <li data-id="{{this.id}}" class="list-group-item">
@@ -164,12 +165,7 @@
           </div>
 
 
-{{!-- MODAL FOR EACH POST --}}
-
-
-
-
-{{!-- MODAL FOR EACH POST --}}
+          {{!-- MODAL FOR EACH POST --}} {{!-- MODAL FOR EACH POST --}}
           <div class="col s4" id="createPostArea">
             <div class="card blue-grey darken-1">
               <div class="card-content" id="createPostCard">
@@ -188,8 +184,8 @@
                       <label for="category">Select Category:</label>
                       <input type="text" id="category" class="form-control" aria-describedby="category" placeholder="Enter Category">
                     </div>
-                  
-                  <button class="btn submitbtn" id="submit" type="submit">Create Post</button>
+
+                    <button class="btn submitbtn" id="submit" type="submit">Create Post</button>
                   </form>
                 </div>
               </div>
@@ -214,18 +210,12 @@
     </div>
   </div>
 </div>
-
-
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
-
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
-<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-<script type="text/javascript"
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
   crossorigin="anonymous"></script>
-{{!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> --}}
-
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script> {{!--
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> --}}
 <script src="/js/index.js"></script>
 <script src="/js/materialize.js"></script>
