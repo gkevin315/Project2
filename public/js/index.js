@@ -66,7 +66,13 @@ var refreshExamples = function() {
         .addClass("btn btn-danger float-right delete")
         .text("ｘ");
 
-      $li.append($button);
+
+        var thumbsUp = $("<button>").addClass("material-icons thumbsup").text("thumb_up").attr("id", "thumbsup"); 
+
+        var thumbsDown = $("<button>").addClass("material-icons thumbsdown").text("thumb_down").attr("id", "thumbsdown");  
+        $li.append($button);
+        $li.append(thumbsUp);
+        $li.append(thumbsDown);
 
       return $li;
     });
