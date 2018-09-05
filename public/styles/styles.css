@@ -105,12 +105,20 @@ margin: auto;
 }
 
 /* #thumbsup{
-  margin-left: 200px;
+  margin-left: -8%;
+  display: flex;
+  margin-top: -12%;
+  position: relative;
 }
 
 .thumbsdown{
-  margin-top: 100px;
-} */
-=======
+  margin-left: -8%;
+  /* display: flex; */
+  /* margin-top: 12%; 
+}*/
+
+
+body{
+  background-image: url(../images/tiny-squares.png);
 }
 

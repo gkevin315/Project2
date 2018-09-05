@@ -84,6 +84,7 @@ module.exports = function (app) {
 		if (req.isAuthenticated()) {
 			res.render('authenticated', {
 				username: req.user.username
+
 			})
 		} else {
 			res.redirect('/')

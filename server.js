@@ -47,7 +47,6 @@ passport.use(new Strategy(
   });
 
   var app = express();
-=======
 // var Strategy = require('passport-local').Strategy;
 
 

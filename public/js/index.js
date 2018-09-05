@@ -8,6 +8,7 @@ $(document).ready(function(){
   $('.sidenav').sidenav();
   $('.modal').modal();
   $('.dropdown-trigger').dropdown();
+  // $('.parallax').parallax();
 
   // $('input#input_text, textarea#textarea2').characterCounter();
 });
@@ -84,7 +85,7 @@ var refreshExamples = function() {
 
       var thumbsUp = $("<button>").addClass("material-icons thumbsup").text("thumb_up").attr("id", "thumbsup"); 
 
-      var thumbsDown = $("<button>").addClass("material-icons thumbsdown").text("thumb_down");  
+      var thumbsDown = $("<button>").addClass("material-icons thumbsdown").text("thumb_down").attr("id", "thumbsdown");
       $li.append($button);
       $li.append(thumbsUp);
       $li.append(thumbsDown);
@@ -145,3 +146,5 @@ refreshExamples();
 $submitBtn.on("click", handleFormSubmit, console.log("submit btn working"));
 $postList.on("click", ".delete", handleDeleteBtnClick);
 // window.onload(href="/")
+
+
