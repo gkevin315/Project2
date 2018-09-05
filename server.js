@@ -33,10 +33,6 @@ app.use(passport.session());
 
 app.use(express.static('public'));
 
-//routes
-require('./routes/htmlRoutes.js')(app);
-
-
 var syncOptions = { force: false };
 
 // If running a test, set syncOptions.force to true
