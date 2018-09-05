@@ -3,18 +3,36 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var orm = require('../db/orm.js');
 
+var path = require("path");
+
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.Author.findAll({}).then(function(dbAuthors) {
+
+    db.Post.findAll({}).then(function(dbPosts) {
       res.render("index", {
         msg: "Welcome!",
-        authors: dbAuthors
+        // authors: dbAuthors,
+        post: dbPosts
       });
     });
-  });
+	});
+	
+	app.get("/post/:id", function(req, res){
+		db.Post.findOne({
+			where: {
+				id: req.params.id }
+			}).then(function(dbPost){
+				res.render("post", {
+					post: dbPost
+				});
+			});
+		});
 
-  app.get("/signup", function(req, res){
+		console.log("breaking");
+
+
+  app.get("/signUp", function(req, res){
     res.render("signup");
   })
 
@@ -23,6 +41,7 @@ module.exports = function(app) {
   })
 
   // Load example page and pass in an example by id
+
   app.get("/author/:id", function(req, res) {
     db.Author.findOne({ where: { id: req.params.id } }).then(function(dbAuthor) {
       res.render("author", {
@@ -33,6 +52,7 @@ module.exports = function(app) {
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
+    res.sendFile(path.join(__dirname, "../views/404.handlebars"));
     res.render("404");
   });
   
@@ -74,12 +94,12 @@ module.exports = function(app){
 		res.render('index', {
 			welcomeText: "Sign In",
 			actionBtn: 'signin',
-			message: req.flash('error')[0],
+			// message: req.flash('error')[0],
 			otherAction: "Signup"
 		});
 	});
 
-	app.get('/signin', function(req, res){
+	app.get('/login', function(req, res){
 		res.redirect('/')
 	});
 
