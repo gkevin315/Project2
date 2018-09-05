@@ -6,7 +6,11 @@
     "host": "localhost",
     "dialect": "mysql",
     "port": "8889"
+
   },
+  "permissions": [
+    "storage"
+  ],
   "test": {
     "username": "root",
     "password": "root",

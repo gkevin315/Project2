@@ -11,6 +11,19 @@
         <li> <a class="waves-effect waves-light btn modal-trigger" href="#modal2">Sign Up</a></li>
       </ul>
     </div>
+    <form action="/login" method="post">
+	<div>
+	<label>Username:</label>
+	<input type="text" name="username"/><br/>
+	</div>
+	<div>
+	<label>Password:</label>
+	<input type="password" name="password"/>
+	</div>
+	<div>
+	<input type="submit" value="Submit"/>
+	</div>
+</form>
     <!-- Modal Structure -->
     {{!-- log in modal --}}
     <div id="modal1" class="modal">
