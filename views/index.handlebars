@@ -175,20 +175,20 @@
           <div class="col s4" id="createPostArea">
             <div class="card blue-grey darken-1">
               <div class="card-content" id="createPostCard">
-                <span class="card-title">Create Post</span>
+                <span class="card-title" id="postCreateHeader">Create Post</span>
                 <div class="row">
                   <form action="POST">
                     <div class="form-group" id="categoryDropdown">
                       <label for="title">Select Category:</label>
-                      <input type="text" id="title" class="form-control" aria-describedby="title" placeholder="Enter Category">
+                      <input type="text" id="title" data-length="40" class="form-control" aria-describedby="title" placeholder="Enter Title">
                     </div>
                     <div class="form-group">
                       <label for="postContent"></label>
-                      <textarea class="form-control" rows="10" id="postContent" aria-describedby="postContent" placeholder="Enter Example Description"></textarea>
+                      <textarea class="form-control" rows="10" id="postContent" data-length="160" aria-describedby="postContent" placeholder="Enter Example Description"></textarea>
                     </div>
                     <div class="form-group" id="categoryDropdown">
                       <label for="category">Select Category:</label>
-                      <input type="text" id="category" class="form-control" aria-describedby="category" placeholder="Enter Category">
+                      <input type="text" id="category" data-length="20" class="form-control" aria-describedby="category" placeholder="Enter Category">
                     </div>
 
                     <button class="btn submitbtn" id="submit" type="submit">Create Post</button>
