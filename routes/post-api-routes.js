@@ -52,17 +52,18 @@ module.exports = function (app) {
             category: req.body.category,
         }).then(function (dbPost) {
             res.json(dbPost);
-        // });
-        // db.Author.create({
-        //     name: req.body.name
-        // }).then(function(dbAuthor){
-        //     res.json(dbAuthor);
-        // });
-        // db.Category.create({
-        //     title: req.body.title
-        // }).then(function(dbCategory){
-        //     res.json(dbCategory);
+            // });
+            // db.Author.create({
+            //     name: req.body.name
+            // }).then(function(dbAuthor){
+            //     res.json(dbAuthor);
+            // });
+            db.Category.create({
+                title: req.body.title
+            }).then(function(dbCategory){
+                res.json(dbCategory);
         });
+    });
     });
 
     // DELETE route for deleting posts
@@ -77,21 +78,21 @@ module.exports = function (app) {
     });
 
     // PUT route for updating posts
-    app.put("/api/posts", function(req, res) {
+    app.put("/api/posts", function (req, res) {
         db.Post.update({
-          title: req.body.title,
-          body: req.body.body,
-          category: req.body.category
-        },{
-          where: {
-            id: req.body.id
-          }
-        }).then(function(dbPost){
-          res.json(dbPost);
-        }).catch(function(dbPost){
-          res.json(err);
-        });
-      });
+            title: req.body.title,
+            body: req.body.body,
+            category: req.body.category
+        }, {
+                where: {
+                    id: req.body.id
+                }
+            }).then(function (dbPost) {
+                res.json(dbPost);
+            }).catch(function (dbPost) {
+                res.json(err);
+            });
+    });
 };
 
 
