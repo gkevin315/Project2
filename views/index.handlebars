@@ -11,35 +11,49 @@
         <li> <a class="waves-effect waves-light btn modal-trigger" href="#modal2">Sign Up</a></li>
       </ul>
     </div>
+    <form action="/login" method="post">
+	<div>
+	<label>Username:</label>
+	<input type="text" name="username"/><br/>
+	</div>
+	<div>
+	<label>Password:</label>
+	<input type="password" name="password"/>
+	</div>
+	<div>
+	<input type="submit" value="Submit"/>
+	</div>
+</form>
     <!-- Modal Structure -->
     {{!-- log in modal --}}
     <div id="modal1" class="modal">
       <div class="modal-content">
-        <div class="row">
-          <div class="input-field col s12">
-            <input id="email" type="email" class="validate">
-            <label for="email" class="active">Email</label>
+        <form action="/login" method="post">
+          <div>
+            <label>Username:</label>
+            <input type="text" name="username" /><br/>
           </div>
-        </div>
-
-        <div class="row">
-          <div class="input-field col s12">
-            <input id="password" type="password" class="validate">
-            <label for="password" class="active">Password</label>
+          <div>
+            <label>Password:</label>
+            <input type="password" name="password" />
           </div>
-        </div>
+          </form>
       </div>
       <div class="modal-footer">
-        <a href="/signIn" class="modal-close waves-effect waves-green btn-flat">Sign In</a>
+
+        <a href="/" type="submit" value="Submit" class="modal-close waves-effect waves-green btn-flat">Sign In</a>
+
       </div>
+      
+
     </div>
 
     {{!-- sign up modal --}}
     <div id="modal2" class="modal">
       <div class="modal-content">
-        <div class="container" id="signup">
+        <div class="container" id="signUp">
           <div class="row">
-            <form class="col s12">
+            <form class="col s12" action="/signUp" method="post">
               <div class="row">
                 <div class="input-field col s6">
                   <input id="first_name" type="text" class="validate">
@@ -74,14 +88,18 @@
 
 
             </form>
+
+            {{!-- <button class="btn waves-effect waves-light" href="/" id="userSignUp" type="submit" name="action">Submit
+
             <button class="btn waves-effect waves-light" href="/signUp" id="userSignUp" type="submit" name="action">Submit
+
               <i class="material-icons right">send</i>
-            </button>
+            </button> --}}
           </div>
         </div>
       </div>
       <div class="modal-footer">
-        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+        <a href="/" type="submit" value="submit" class="modal-close waves-effect waves-green btn-flat">Sign Up</a>
         {{!-- <a href="signup" class="modal-close waves-effect waves-green btn-flat">Sign Up</a> --}}
       </div>
     </div>

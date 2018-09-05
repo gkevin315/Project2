@@ -10,7 +10,7 @@ var PORT = process.env.PORT || 8080;
 var passport = require('passport');
 
 var Strategy = require('passport-local').Strategy;
-var db = require('.db/db');
+// var db = require('.db/db');
 
 // Configure the local strategy for use by Passport.
 //

@@ -58,11 +58,13 @@ module.exports = function (app) {
             // }).then(function(dbAuthor){
             //     res.json(dbAuthor);
             // });
-            // db.Category.create({
-            //     title: req.body.title
-            // }).then(function(dbCategory){
-            //     res.json(dbCategory);
+
+            db.Category.create({
+                title: req.body.title
+            }).then(function(dbCategory){
+                res.json(dbCategory);
         });
+    });
     });
 
     // DELETE route for deleting posts
