@@ -50,11 +50,9 @@ var API = {
 };
 
 
-var getCategories = function(){
-  $("#categoriesdrop").append(post.category);
-}
-
-
+// var getCategories = function(){
+//   $("#categoriesdrop").append(post.category);
+// }
 
       console.log("posts working");
 
@@ -83,12 +81,14 @@ var refreshExamples = function() {
         .addClass("btn btn-danger float-right delete")
         .text("ｘ");
 
+
       var thumbsUp = $("<button>").addClass("material-icons thumbsup").text("thumb_up").attr("id", "thumbsup"); 
 
       var thumbsDown = $("<button>").addClass("material-icons thumbsdown").text("thumb_down");  
       $li.append($button);
       $li.append(thumbsUp);
       $li.append(thumbsDown);
+
 
       return $li;
     });
@@ -136,8 +136,10 @@ var handleDeleteBtnClick = function() {
 };
 
 refreshExamples();
+
 // saveCatergory();
-getCategories();
+// getCategories();
+
 
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit, console.log("submit btn working"));

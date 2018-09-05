@@ -58,6 +58,7 @@ module.exports = function (app) {
             // }).then(function(dbAuthor){
             //     res.json(dbAuthor);
             // });
+
             db.Category.create({
                 title: req.body.title
             }).then(function(dbCategory){
