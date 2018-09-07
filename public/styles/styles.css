@@ -146,3 +146,7 @@ body{
 #postCreateHeader{
   text-align: center;
 }
+
+#xbutton{
+  border-radius: 200px;
+}

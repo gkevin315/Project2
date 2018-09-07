@@ -82,7 +82,7 @@ var refreshExamples = function() {
 
       var $button = $("<button>")
         .addClass("btn btn-danger float-right delete")
-        .text("ｘ");
+        .text("ｘ").attr("id", "xbutton");
 
 
       var thumbsUp = $("<button>").addClass("material-icons thumbsup").text("thumb_up").attr("id", "thumbsup"); 
