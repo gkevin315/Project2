@@ -15,7 +15,7 @@
     {{!-- log in modal --}}
     <div id="modal1" class="modal">
       <div class="modal-content">
-        <form action="/login" method="post">
+        <form action="/signIn" method="post">
           <div>
             <label>Username:</label>
             <input type="text" name="username" /><br/>
@@ -24,12 +24,13 @@
             <label>Password:</label>
             <input type="password" name="password" />
           </div>
+          <div class="modal-footer">
+
+            <a type="submit" value="Submit" class="modal-close waves-effect waves-green btn-flat">Sign In</a>
+
+          </div>
+
         </form>
-      </div>
-      <div class="modal-footer">
-
-        <a href="/" type="submit" value="Submit" class="modal-close waves-effect waves-green btn-flat">Sign In</a>
-
       </div>
 
 
@@ -72,7 +73,10 @@
                   <label for="phone" class="active">Phone Number</label>
                 </div>
               </div>
-
+              <div class="modal-footer">
+                <a type="submit" value="submit" class="modal-close waves-effect waves-green btn-flat">Sign Up</a>
+                {{!-- <a href="signup" class="modal-close waves-effect waves-green btn-flat">Sign Up</a> --}}
+              </div>
 
             </form>
 
@@ -85,10 +89,7 @@
           </div>
         </div>
       </div>
-      <div class="modal-footer">
-        <a href="/" type="submit" value="submit" class="modal-close waves-effect waves-green btn-flat">Sign Up</a>
-        {{!-- <a href="signup" class="modal-close waves-effect waves-green btn-flat">Sign Up</a> --}}
-      </div>
+
     </div>
 
   </nav>
