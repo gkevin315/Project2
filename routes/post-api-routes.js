@@ -29,6 +29,18 @@ module.exports = function (app) {
         });
     });
 
+    // app.get("/api/posts/:category", function(req, res) {
+    //     // Add sequelize code to find all posts where the category is equal to req.params.category,
+    //     // return the result to the user with res.json
+    //     db.Post.findAll({
+    //       where: {
+    //       category: req.params.category
+    //       }
+    //     }).then(function(dbPost){
+    //       res.json(dbPost);
+    //     });
+    //   });
+
 
     // Get route for retrieving a single post
     app.get("/api/posts/:id", function (req, res) {
@@ -39,7 +51,21 @@ module.exports = function (app) {
             where: {
                 id: req.params.id
             },
-            include: [db.Author]
+            include: [db.Author, db.Category]
+        }).then(function (dbPost) {
+            res.json(dbPost);
+        });
+    });
+
+    app.get("/api/posts/category/:id", function (req, res) {
+        // Here we add an "include" property to our options in our findOne query
+        // We set the value to an array of the models we want to include in a left outer join
+        // In this case, just db.Author
+        db.Post.findAll({
+            where: {
+                id: req.params.id
+            },
+            include: [db.Author, db.Category]
         }).then(function (dbPost) {
             res.json(dbPost);
         });
@@ -52,6 +78,7 @@ module.exports = function (app) {
             title: req.body.title,
             body: req.body.body,
             category: req.body.category,
+            include: [dbAuthor, dbCategory]
         }).then(function (dbPost) {
             res.json(dbPost);
             // });
@@ -61,11 +88,11 @@ module.exports = function (app) {
             //     res.json(dbAuthor);
             // });
 
-            db.Category.create({
-                title: req.body.title
-            }).then(function(dbCategory){
-                res.json(dbCategory);
-        });
+        //     db.Category.create({
+        //         title: req.body.title
+        //     }).then(function(dbCategory){
+        //         res.json(dbCategory);
+        // });
     });
     });
 

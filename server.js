@@ -4,7 +4,7 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var exphbs = require("express-handlebars");
 var db = require("./models");
-var orm = require('./db/orm.js');
+// var orm = require('./db/orm.js');
 var app = express();
 var PORT = process.env.PORT || 8080;
 var passport = require('passport');
@@ -66,6 +66,8 @@ app.use(bodyParser.json({type:'application/vnd.api+json'}));
 require("./routes/author-api-routes.js")(app);
 require("./routes/htmlRoutes.js")(app);
 require("./routes/post-api-routes.js")(app);
+require("./routes/category-api-routes.js")(app);
+require("./db/index.js");
 
 // Initialize Passport and restore authentication state, if any, from the
 // session.
@@ -116,7 +118,7 @@ if (process.env.NODE_ENV === "test") {
   syncOptions.force = true;
 }
 
-orm.connectToDB();
+// orm.connectToDB();
 
 // Starting the server, syncing our models ------------------------------------/
 db.sequelize.sync(syncOptions).then(function() {

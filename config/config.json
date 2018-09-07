@@ -5,6 +5,7 @@
     "database": "authordb",
     "host": "localhost",
     "dialect": "mysql",
+
     "port": "8889"
 
   },

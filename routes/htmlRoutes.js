@@ -60,6 +60,15 @@ module.exports = function (app) {
 		});
 	});
 
+	app.get("/post/:category", function(req, res){
+		db.Category.findOne({
+			where: {category: req.params.id}
+		}).then(function(dbPost){
+			res.render('post', {
+		post: dbPost})
+		})
+	})
+
 
 	app.get("/author/:id", function (req, res) {
 		db.Author.findOne({ where: { id: req.params.id } }).then(function (dbAuthor) {
