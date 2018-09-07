@@ -14,12 +14,12 @@ module.exports = function (sequelize, DataTypes) {
     });
 
     Category.associate = (models) => {
-        Category.hasMany(models.Post, {
-            foreignKey: {
-                associate: "authorId",
-                allowNull: false
-            }
-        });
+        // Category.hasMany(models.Post, {
+        //     foreignKey: {
+        //         associate: "authorId",
+        //         allowNull: false
+        //     }
+        // });
         Category.belongsTo(models.Author, {
             foreignKey: {
                 associate: "authorId",

@@ -37,7 +37,7 @@ Object.keys(db).forEach(function (modelName) {
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
-var orm = require('../db/orm.js');
+// var orm = require('../db/orm.js');
 
 function User (userObj) {
 	this.username = userObj.username
