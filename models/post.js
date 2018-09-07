@@ -29,7 +29,7 @@ module.exports = function (sequelize, DataTypes) {
     });
 
     Post.associate = function (models) {
-        Post.belongsTo(models.Category, {
+        Post.hasOne(models.Category, {
             foreignKey: {
                 allowNull: false
             }

@@ -1,3 +1,6 @@
+require("./author");
+require("./post");
+
 module.exports = function (sequelize, DataTypes) {
     var Category = sequelize.define("category", {
         title: {
@@ -11,7 +14,7 @@ module.exports = function (sequelize, DataTypes) {
     });
 
     Category.associate = (models) => {
-        Category.hasMany(models.Post, {
+        Category.hasMany(models.posts, {
             foreignKey: {
                 associate: "authorId",
                 allowNull: false
