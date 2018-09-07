@@ -112,12 +112,12 @@
 
     <!-- Dropdown Structure -->
     <ul id='dropdown1' class='dropdown-content'>
-      <li><a href="#!">one</a></li>
-      <li><a href="#!">two</a></li>
-      <li class="divider" tabindex="-1"></li>
-      <li><a href="#!">three</a></li>
-      <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
-      <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
+      {{#each posts}}
+       <li data-id="{{this.cat}}" class="dropdown-contents">
+          <a href="post/{{this.cat}}">{{this.text}}</a>
+       </li>
+       <li class="divider" tabindex="-1"></li>
+      {{/each}}
     </ul>
 
     <a class='dropdown-trigger btn' id="dropbtn" href='#' data-target='dropdown2'>Hot Topics!</a>
@@ -136,12 +136,12 @@
 
     <!-- Dropdown Structure -->
     <ul id='dropdown3' class='dropdown-content'>
-      <li><a href="#!">one</a></li>
-      <li><a href="#!">two</a></li>
+      <li><a href="#!">Admins</a></li>
       <li class="divider" tabindex="-1"></li>
-      <li><a href="#!">three</a></li>
-      <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
-      <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
+      <li><a href="https://github.com/splumber">Sajjad P.</a></li>
+      <li><a href="https://github.com/gkevin315">Kevin G.</a></li>
+      <li><a href="https://github.com/PPhanouvong">Phokham P.</a></li>
+      <li><a href="https://github.com/broe5392/">Brandon B.</a></li>
     </ul>
   </ul>
   <a href="#" id="sideNavBtn" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
