@@ -40,36 +40,36 @@
       <div class="modal-content">
         <div class="container" id="signUp">
           <div class="row">
-            <form class="col s12" action="/signUp" method="post">
+            <form class="col s12" action="signUp" method="post">
               <div class="row">
                 <div class="input-field col s6">
-                  <input id="first_name" type="text" class="validate">
-                  <label for="first_name" class="active"> First Name</label>
+                  <input id="first_name" type="text" cçlass="validate">
+                  <label for="first_name" name="firstName" class="active"> First Name</label>
                 </div>
                 <div class="input-field col s6">
                   <input id="last_name" type="text" class="validate">
-                  <label for="last_name" class="active">Last Name</label>
+                  <label for="last_name" name="lastName" class="active">Last Name</label>
                 </div>
               </div>
               <div class="row">
                 <div class="input-field col s6">
                   <input id="email" type="email" class="">
-                  <label for="email" class="active">Email</label>
+                  <label for="email" name="email" class="active">Email</label>
                 </div>
               </div>
 
               <div class="row">
                 <div class="input-field col s12">
                   <input id="password" type="password" class="">
-                  <label for="password" class="active">Password</label>
+                  <label for="password" name="password" class="active">Password</label>
                 </div>
               </div>
 
 
               <div class="row">
                 <div class="input-field col s12">
-                  <input id="phone" type="number" class="validate">
-                  <label for="phone" class="active">Phone Number</label>
+                  <input id="passMatch" type="password" class="validate">
+                  <label for="passMath" name="passMatch" class="active">Re-Enter Password</label>
                 </div>
               </div>
 
@@ -86,7 +86,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <a href="/" type="submit" value="submit" class="modal-close waves-effect waves-green btn-flat">Sign Up</a>
+        <a href="" type="submit" value="submit" class="modal-close waves-effect waves-green btn-flat">Sign Up</a>
         {{!-- <a href="signup" class="modal-close waves-effect waves-green btn-flat">Sign Up</a> --}}
       </div>
     </div>

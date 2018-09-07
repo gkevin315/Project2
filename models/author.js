@@ -1,7 +1,10 @@
 module.exports = function (sequelize, DataTypes) {
   var Author = sequelize.define("Author", {
     // Giving the Author model a name of type STRING
-    name: DataTypes.STRING
+    firstName: DataTypes.STRING,
+    lastName: DataTypes.STRING,
+    email: DataTypes.STRING,
+    password: DataTypes.STRING
   });
 
   Author.associate = function (models) {
@@ -12,12 +15,18 @@ module.exports = function (sequelize, DataTypes) {
     });
   };
 
-  var Category = sequelize.define("Category", {
-    name: DataTypes.STRING
-  });
+  // Author.associate = function(models) {
+  //   Author.hasMany(models.Category, {
+  //     onDelete: "cascade"
+  //   });
+  // }
 
-  Category.associate = function (models) {
-    Category.hasMany(models.Post)
-  };
+  // var Category = sequelize.define("Category", {
+  //   name: DataTypes.STRING
+  // });
+
+  // Category.associate = function (models) {
+  //   Category.hasMany(models.Post)
+  // };
   return Author;
 };

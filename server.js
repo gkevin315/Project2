@@ -4,7 +4,7 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var exphbs = require("express-handlebars");
 var db = require("./models");
-var orm = require('./db/orm.js');
+// var orm = require('./db/orm.js');
 var app = express();
 var PORT = process.env.PORT || 8080;
 var passport = require('passport');
@@ -67,6 +67,7 @@ require("./routes/author-api-routes.js")(app);
 require("./routes/htmlRoutes.js")(app);
 require("./routes/post-api-routes.js")(app);
 require("./routes/category-api-routes.js")(app);
+// require("./routes/register.js")(app);
 
 // Initialize Passport and restore authentication state, if any, from the
 // session.
@@ -76,12 +77,21 @@ app.use(passport.session());
 // Define routes.
 app.get('/',
   function(req, res) {
-    res.render('home', { user: req.user });
+    res.render('index', { user: req.user });
   });
+
+app.post('/signUp', function(req, res){
+  console.log("------------------");
+  console.log(req.body.firstName);
+  console.log("------------------");
+
+  res.render('index', alert("you are now registered!"));
+});
+
 
 app.get('/login',
   function(req, res){
-    res.render('login');
+    res.render('index');
   });
   
 app.post('/login', 
@@ -117,7 +127,7 @@ if (process.env.NODE_ENV === "test") {
   syncOptions.force = true;
 }
 
-orm.connectToDB();
+// orm.connectToDB();
 
 // Starting the server, syncing our models ------------------------------------/
 db.sequelize.sync(syncOptions).then(function() {
