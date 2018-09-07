@@ -1,5 +1,3 @@
-"use strict";
-
 var fs = require("fs");
 var path = require("path");
 var Sequelize = require("sequelize");
@@ -39,8 +37,6 @@ Object.keys(db).forEach(function (modelName) {
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
-var passport = require('passport');
-var LocalStrategy = require('passport-local').Strategy;
 var orm = require('../db/orm.js');
 
 function User (userObj) {

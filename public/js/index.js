@@ -8,6 +8,9 @@ $(document).ready(function(){
   $('.sidenav').sidenav();
   $('.modal').modal();
   $('.dropdown-trigger').dropdown();
+  $('textarea#postContent').characterCounter();
+  ('input#title, input#category').characterCounter();
+  // $('.parallax').parallax();
 
   // $('input#input_text, textarea#textarea2').characterCounter();
 });
@@ -25,6 +28,16 @@ var API = {
       data: JSON.stringify(post)
     });
   },
+  // saveCatergory: function(catergory){
+  //   return $.ajax({
+  //     headers: {
+  //       "Content-Type": "application/json"
+  //     },
+  //     type: "POST",
+  //     url: "api/category",
+  //     data: JSON.stringify(category)
+  //   });
+  // },
   getExamples: function() {
     return $.ajax({
       url: "api/posts",
@@ -38,6 +51,11 @@ var API = {
     });
   }
 };
+
+
+// var getCategories = function(){
+//   $("#categoriesdrop").append(post.category);
+// }
 
       console.log("posts working");
 
@@ -66,7 +84,14 @@ var refreshExamples = function() {
         .addClass("btn btn-danger float-right delete")
         .text("ｘ");
 
+
+      var thumbsUp = $("<button>").addClass("material-icons thumbsup").text("thumb_up").attr("id", "thumbsup"); 
+
+      var thumbsDown = $("<button>").addClass("material-icons thumbsdown").text("thumb_down").attr("id", "thumbsdown");
       $li.append($button);
+      $li.append(thumbsUp);
+      $li.append(thumbsDown);
+
 
       return $li;
     });
@@ -115,7 +140,13 @@ var handleDeleteBtnClick = function() {
 
 refreshExamples();
 
+// saveCatergory();
+// getCategories();
+
+
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit, console.log("submit btn working"));
 $postList.on("click", ".delete", handleDeleteBtnClick);
 // window.onload(href="/")
+
+
