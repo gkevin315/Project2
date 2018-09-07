@@ -1,16 +1,19 @@
 <div class="container">
   <div class="row">
     <div class="col-8 offset-2">
-      <div class="card mt-4">
+      <div class="card mt-4 slide-in-left" id="postCard">
         <div class="card-body">
-          <h5 class="card-title">Example</h5>
+          <h5 class="card-title" id="postHeader">Post</h5>
           <p>
             <strong>ID</strong>: {{post.id}}</p>
           <p>
-          <p>
-            <strong>Text</strong>: {{post.title}}</p>
-          <p>
-            <strong>Description:</strong> {{post.body}}</p>
+            <p>
+              <strong>Text</strong>: {{post.title}}</p>
+            <p>
+              <strong>Description:</strong> {{post.body}}</p>
+            <p>
+              <strong>Category: </strong> {{post.category}}
+            </p>  
             <a href="/">← Back To Home</a>
         </div>
       </div>
