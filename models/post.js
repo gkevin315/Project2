@@ -30,9 +30,10 @@ module.exports = function (sequelize, DataTypes) {
 
     Post.associate = function (models) {
         Post.hasOne(models.Category, {
-            foreignKey: {
-                allowNull: false
-            }
+            constraints: false,
+            // foreignKey: {
+            //     allowNull: true
+            // }
         });
         Post.belongsTo(models.Author, {
             foreignKey: 'AuthorId'
