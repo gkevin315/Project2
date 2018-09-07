@@ -9,7 +9,7 @@ $(document).ready(function(){
   $('.modal').modal();
   $('.dropdown-trigger').dropdown();
   $('textarea#postContent').characterCounter();
-  ('input#title, input#category').characterCounter();
+  $('input#title, input#category').characterCounter();
   // $('.parallax').parallax();
 
   // $('input#input_text, textarea#textarea2').characterCounter();

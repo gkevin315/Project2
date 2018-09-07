@@ -66,6 +66,7 @@ app.use(bodyParser.json({type:'application/vnd.api+json'}));
 require("./routes/author-api-routes.js")(app);
 require("./routes/htmlRoutes.js")(app);
 require("./routes/post-api-routes.js")(app);
+require("./routes/category-api-routes.js")(app);
 
 // Initialize Passport and restore authentication state, if any, from the
 // session.

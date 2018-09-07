@@ -44,6 +44,8 @@
 #createPostCard{
   height: auto;
   background-color: whitesmoke;
+  box-shadow: 5px 5px 5px 5px;
+  /* background-color: black; */
 }
 
 #postContent{

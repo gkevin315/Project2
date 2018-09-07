@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-    var Category = sequelize.define("Post", {
+    var Category = sequelize.define("category", {
         title: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -11,7 +11,7 @@ module.exports = function (sequelize, DataTypes) {
     });
 
     Category.associate = function (models) {
-        Category.belongsTo(models.Post, {
+        Category.hasMany(models.Post, {
             foreignKey: {
                 allowNull: false
             }

@@ -5166,7 +5166,7 @@ small {
 .btn, .btn-large, .btn-small,
 .btn-flat {
   border: none;
-  border-radius: 2px;
+  border-radius: 200px;
   display: inline-block;
   height: 36px;
   line-height: 36px;
@@ -5175,6 +5175,8 @@ small {
   vertical-align: middle;
   -webkit-tap-highlight-color: transparent;
 }
+
+
 
 .btn.disabled, .disabled.btn-large, .disabled.btn-small,
 .btn-floating.disabled,
@@ -5265,7 +5267,7 @@ small {
 }
 
 .btn:hover, .btn-large:hover, .btn-small:hover {
-  background-color: #2bbbad;
+  background-color: orange;
 }
 
 .btn-floating {
