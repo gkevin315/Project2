@@ -60,6 +60,7 @@ module.exports = function (app) {
 		});
 	});
 
+
 	app.get("/author/:id", function (req, res) {
 		db.Author.findOne({ where: { id: req.params.id } }).then(function (dbAuthor) {
 			res.render("author", {
@@ -98,7 +99,7 @@ module.exports = function (app) {
 
 	//POSTs
 
-	app.post('/signin', passport.authenticate('local', { failureRedirect: '/', failureFlash: 'Wrong Username or Password' }), function (req, res) {
+	app.post('/login', passport.authenticate('local', { failureRedirect: '/', failureFlash: 'Wrong Username or Password' }), function (req, res) {
 		res.redirect('/authenticated');
 	});
 
