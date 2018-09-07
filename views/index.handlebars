@@ -2,20 +2,20 @@
 
   <nav>
     <div class="nav-wrapper">
-      <a href="/" class="brand-logo center"><img id="roboHead" src="../images/roboHead.png"></a>
+      <a href="/" class="brand-logo center"><img id="roboHead" class="animation-target" src="../images/roboHead.png"></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         {{!--
         <li><a href="sass.html">Sass</a></li>
         <li><a href="badges.html">Components</a></li> --}}
         <li> <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Log In</a></li>
-        <li> <a class="waves-effect waves-light btn modal-trigger" href="#modal2">Sign Up</a></li>
+        <li> <a class="waves-effect waves-light btn modal-trigger" action="/signUp" href="#modal2">Sign Up</a></li>
       </ul>
     </div>
     <!-- Modal Structure -->
     {{!-- log in modal --}}
     <div id="modal1" class="modal">
       <div class="modal-content">
-        <form action="/login" method="post">
+        <form action="/signIn" method="post">
           <div>
             <label>Username:</label>
             <input type="text" name="username" /><br/>
@@ -24,12 +24,13 @@
             <label>Password:</label>
             <input type="password" name="password" />
           </div>
+          <div class="modal-footer">
+
+            <a type="submit" value="Submit" class="modal-close waves-effect waves-green btn-flat">Sign In</a>
+
+          </div>
+
         </form>
-      </div>
-      <div class="modal-footer">
-
-        <a href="/" type="submit" value="Submit" class="modal-close waves-effect waves-green btn-flat">Sign In</a>
-
       </div>
 
 
@@ -39,40 +40,47 @@
     <div id="modal2" class="modal">
       <div class="modal-content">
         <div class="container" id="signUp">
+          
           <div class="row">
+            {{title}}
+            
             <form class="col s12" action="/signUp" method="post">
               <div class="row">
+                
                 <div class="input-field col s6">
-                  <input id="first_name" type="text" class="validate">
-                  <label for="first_name" class="active"> First Name</label>
+                  <input id="firstName" type="text" class="validate">
+                  <label for="firstName" name="firstName" class="active"> First Name</label>
                 </div>
                 <div class="input-field col s6">
                   <input id="last_name" type="text" class="validate">
-                  <label for="last_name" class="active">Last Name</label>
+                  <label for="last_name" name="lastName" class="active">Last Name</label>
                 </div>
               </div>
               <div class="row">
                 <div class="input-field col s6">
                   <input id="email" type="email" class="">
-                  <label for="email" class="active">Email</label>
+                  <label for="email" name="email" class="active">Email</label>
                 </div>
               </div>
 
               <div class="row">
                 <div class="input-field col s12">
                   <input id="password" type="password" class="">
-                  <label for="password" class="active">Password</label>
+                  <label for="password" name="password" class="active">Password</label>
                 </div>
               </div>
 
 
               <div class="row">
                 <div class="input-field col s12">
-                  <input id="phone" type="number" class="validate">
-                  <label for="phone" class="active">Phone Number</label>
+                  <input id="passMatch" type="password" class="validate">
+                  <label for="passMatch" name="passMatch" class="active">Re-Enter Password</label>
                 </div>
               </div>
-
+              <div class="modal-footer">
+                <a type="submit" value="submit" class="modal-close waves-effect waves-green btn-flat">Sign Up</a>
+                {{!-- <a href="signup" class="modal-close waves-effect waves-green btn-flat">Sign Up</a> --}}
+              </div>
 
             </form>
 
@@ -85,10 +93,7 @@
           </div>
         </div>
       </div>
-      <div class="modal-footer">
-        <a href="/" type="submit" value="submit" class="modal-close waves-effect waves-green btn-flat">Sign Up</a>
-        {{!-- <a href="signup" class="modal-close waves-effect waves-green btn-flat">Sign Up</a> --}}
-      </div>
+
     </div>
 
   </nav>
@@ -107,12 +112,12 @@
 
     <!-- Dropdown Structure -->
     <ul id='dropdown1' class='dropdown-content'>
-      <li><a href="#!">one</a></li>
-      <li><a href="#!">two</a></li>
-      <li class="divider" tabindex="-1"></li>
-      <li><a href="#!">three</a></li>
-      <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
-      <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
+      {{#each posts}}
+       <li data-id="{{this.cat}}" class="dropdown-contents">
+          <a href="post/{{this.cat}}">{{this.text}}</a>
+       </li>
+       <li class="divider" tabindex="-1"></li>
+      {{/each}}
     </ul>
 
     <a class='dropdown-trigger btn' id="dropbtn" href='#' data-target='dropdown2'>Hot Topics!</a>
@@ -131,17 +136,17 @@
 
     <!-- Dropdown Structure -->
     <ul id='dropdown3' class='dropdown-content'>
-      <li><a href="#!">one</a></li>
-      <li><a href="#!">two</a></li>
+      <li><a href="#!">Admins</a></li>
       <li class="divider" tabindex="-1"></li>
-      <li><a href="#!">three</a></li>
-      <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
-      <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
+      <li><a href="https://github.com/splumber">Sajjad P.</a></li>
+      <li><a href="https://github.com/gkevin315">Kevin G.</a></li>
+      <li><a href="https://github.com/PPhanouvong">Phokham P.</a></li>
+      <li><a href="https://github.com/broe5392/">Brandon B.</a></li>
     </ul>
   </ul>
   <a href="#" id="sideNavBtn" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 
-
+{{!-- <img id="roboHead" class="animation-target" src="../images/roboHead.png"> --}}
   <div class="container">
 
     <div class="row">
@@ -160,7 +165,7 @@
                 <h3>Examples:</h3> --}}
                 <ul id="post-list" class="list-group">
                   {{#each posts}}
-                  <li data-id="{{this.id}}" class="list-group-item">
+                  <li data-id="{{this.category}}" class="list-group-item">
                     <a href="post/{{this.id}}">{{this.text}}</a>
                     <button class="btn btn-danger float-right delete">ｘ</button>
                   </li>

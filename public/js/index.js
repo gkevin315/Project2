@@ -4,21 +4,23 @@ var $postContent = $("#postContent");
 var $category = $("#category");
 var $submitBtn = $("#submit");
 var $postList = $("#post-list");
-$(document).ready(function(){
+var dropdown1 = $("#dropdown1");
+
+$(document).ready(function () {
   $('.sidenav').sidenav();
   $('.modal').modal();
   $('.dropdown-trigger').dropdown();
   $('textarea#postContent').characterCounter();
-  ('input#title, input#category').characterCounter();
+  $('input#title, input#category').characterCounter();
   // $('.parallax').parallax();
 
   // $('input#input_text, textarea#textarea2').characterCounter();
 });
-      
+
 
 // The API object contains methods for each kind of request we'll make
 var API = {
-  saveExample: function(post) {
+  saveExample: function (post) {
     return $.ajax({
       headers: {
         "Content-Type": "application/json"
@@ -28,6 +30,7 @@ var API = {
       data: JSON.stringify(post)
     });
   },
+
   // saveCatergory: function(catergory){
   //   return $.ajax({
   //     headers: {
@@ -38,13 +41,14 @@ var API = {
   //     data: JSON.stringify(category)
   //   });
   // },
-  getExamples: function() {
+
+  getExamples: function () {
     return $.ajax({
       url: "api/posts",
       type: "GET"
     });
   },
-  deleteExample: function(id) {
+  deleteExample: function (id) {
     return $.ajax({
       url: "api/posts/" + id,
       type: "DELETE"
@@ -57,21 +61,57 @@ var API = {
 //   $("#categoriesdrop").append(post.category);
 // }
 
-      console.log("posts working");
+console.log("posts working");
+
+// Adding new categories to the categories dropdown
+//adding two empty variables to sort the data and not have repeating categories..
+var catArr = [];
+var catObjMap = {};
+var addNewCategories = function () {
+  API.getExamples().then(function (data) {
+    for (var i = 0; i < data.length; i++) {
+      var categories = data[i].category;
+      if (catObjMap[categories] === undefined) {
+        catObjMap[categories] = categories;
+        catArr.push(categories);
+      }
+    }
+    console.log('hello');
+    var $cat = catArr.map(function (cat) {
+      console.log(cat);
+    //  console.log(post);
+      var $c = $("<a>")
+        .text(cat)
+        .attr("href", "/post/" + cat);
+
+      var $li = $("<li>")
+        .attr({
+          class: "dropdown-contents",
+          "data-id": cat
+        })
+        .append($c);
+   
+      return $li;
+    });
+    dropdown1.empty();
+    dropdown1.append($cat);
+  });
+};
+
 
 // refreshExamples gets new examples from the db and repopulates the list
-var refreshExamples = function() {
-  API.getExamples().then(function(data) {
-    var $posts = data.map(function(post) {
+var refreshExamples = function () {
+  API.getExamples().then(function (data) {
+    var $posts = data.map(function (post) {
       var $a = $("<a>")
         .text(post.title)
         .attr("href", "/post/" + post.id);
 
       var $b = $("<a>").text(post.body)
-      .attr("href", "/post/" + post.id);
+        .attr("href", "/post/" + post.id);
 
       var $c = $("<a>").text(post.category)
-      .attr("href", "/post/" + post.id);
+        .attr("href", "/post/" + post.id);
 
       var $li = $("<li>")
         .attr({
@@ -98,12 +138,13 @@ var refreshExamples = function() {
 
     $postList.empty();
     $postList.append($posts);
+    addNewCategories();
   });
 };
 
 // handleFormSubmit is called whenever we submit a new example
 // Saveß the new example to the db and refresh the list
-var handleFormSubmit = function(event) {
+var handleFormSubmit = function (event) {
   event.preventDefault();
 
   var post = {
@@ -117,7 +158,7 @@ var handleFormSubmit = function(event) {
     return;
   }
 
-  API.saveExample(post).then(function() {
+  API.saveExample(post).then(function () {
     refreshExamples();
   });
 
@@ -128,12 +169,12 @@ var handleFormSubmit = function(event) {
 
 // handleDeleteBtnClick is called when an example's delete button is clicked
 // Remove the example from the db and refresh the list
-var handleDeleteBtnClick = function() {
+var handleDeleteBtnClick = function () {
   var idToDelete = $(this)
     .parent()
     .attr("data-id");
 
-  API.deleteExample(idToDelete).then(function() {
+  API.deleteExample(idToDelete).then(function () {
     refreshExamples();
   });
 };
@@ -143,6 +184,7 @@ refreshExamples();
 // saveCatergory();
 // getCategories();
 
+addNewCategories();
 
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit, console.log("submit btn working"));
