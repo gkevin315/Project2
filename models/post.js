@@ -29,7 +29,7 @@ module.exports = function (sequelize, DataTypes) {
     });
 
     Post.associate = function (models) {
-        Post.belongsTo(models.category, {
+        Post.belongsTo(models.Category, {
             foreignKey: {
                 allowNull: false
             }
@@ -38,9 +38,7 @@ module.exports = function (sequelize, DataTypes) {
 
     Post.associate = function (models) {
         Post.belongsTo(models.Author, {
-            foreignKey: {
-                allowNull: false
-            }
+            foreignKey: 'AuthorId'
         });
     };
 

@@ -8,7 +8,7 @@
         <li><a href="sass.html">Sass</a></li>
         <li><a href="badges.html">Components</a></li> --}}
         <li> <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Log In</a></li>
-        <li> <a class="waves-effect waves-light btn modal-trigger" href="#modal2">Sign Up</a></li>
+        <li> <a class="waves-effect waves-light btn modal-trigger" action="/signUp" href="#modal2">Sign Up</a></li>
       </ul>
     </div>
     <!-- Modal Structure -->
@@ -40,37 +40,41 @@
     <div id="modal2" class="modal">
       <div class="modal-content">
         <div class="container" id="signUp">
+          
           <div class="row">
+            {{title}}
+            
             <form class="col s12" action="/signUp" method="post">
               <div class="row">
+                
                 <div class="input-field col s6">
-                  <input id="first_name" type="text" class="validate">
-                  <label for="first_name" class="active"> First Name</label>
+                  <input id="firstName" type="text" class="validate">
+                  <label for="firstName" name="firstName" class="active"> First Name</label>
                 </div>
                 <div class="input-field col s6">
                   <input id="last_name" type="text" class="validate">
-                  <label for="last_name" class="active">Last Name</label>
+                  <label for="last_name" name="lastName" class="active">Last Name</label>
                 </div>
               </div>
               <div class="row">
                 <div class="input-field col s6">
                   <input id="email" type="email" class="">
-                  <label for="email" class="active">Email</label>
+                  <label for="email" name="email" class="active">Email</label>
                 </div>
               </div>
 
               <div class="row">
                 <div class="input-field col s12">
                   <input id="password" type="password" class="">
-                  <label for="password" class="active">Password</label>
+                  <label for="password" name="password" class="active">Password</label>
                 </div>
               </div>
 
 
               <div class="row">
                 <div class="input-field col s12">
-                  <input id="phone" type="number" class="validate">
-                  <label for="phone" class="active">Phone Number</label>
+                  <input id="passMatch" type="password" class="validate">
+                  <label for="passMatch" name="passMatch" class="active">Re-Enter Password</label>
                 </div>
               </div>
               <div class="modal-footer">

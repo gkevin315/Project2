@@ -8,16 +8,17 @@ module.exports = function (sequelize, DataTypes) {
     // Associating Author with Posts
     // When an Author is deleted, also delete any associated Posts
     Author.hasMany(models.Post, {
-      onDelete: "cascade"
+      onDelete: "cascade",
+      foreignKey: 'AuthorId'
     });
   };
 
-  var Category = sequelize.define("Category", {
-    name: DataTypes.STRING
-  });
+  // var Category = sequelize.define("Category", {
+  //   name: DataTypes.STRING
+  // });
 
-  Category.associate = function (models) {
-    Category.hasMany(models.Post)
-  };
+  // Category.associate = function (models) {
+  //   Category.hasMany(models.Post)
+  // };
   return Author;
 };

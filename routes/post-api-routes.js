@@ -64,7 +64,7 @@ module.exports = function (app) {
             title: req.body.title,
             body: req.body.body,
             category: req.body.category,
-            include: [db.Author]
+            include: [db.authors, db.Category]
         }).then(function (dbPost) {
             res.json(dbPost);
             // });

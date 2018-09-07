@@ -31,19 +31,19 @@ module.exports = function (app) {
 
 
     // Get route for retrieving a single post
-    app.get("/api/category/:id", function (req, res) {
-        // Here we add an "include" property to our options in our findOne query
-        // We set the value to an array of the models we want to include in a left outer join
-        // In this case, just db.Author
-        db.Category.findOne({
-            where: {
-                id: req.params.id
-            },
-            include: [db.Author]
-        }).then(function (dbCategory) {
-            res.json(dbCategory);
-        });
-    });
+    // app.get("/api/category/:id", function (req, res) {
+    //     // Here we add an "include" property to our options in our findOne query
+    //     // We set the value to an array of the models we want to include in a left outer join
+    //     // In this case, just db.Author
+    //     db.Category.findOne({
+    //         where: {
+    //             id: req.params.id
+    //         },
+    //         include: [db.Author]
+    //     }).then(function (dbCategory) {
+    //         res.json(dbCategory);
+    //     });
+    // });
 
 
     // POST route for saving a new post

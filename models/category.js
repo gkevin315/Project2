@@ -10,9 +10,10 @@ module.exports = function (sequelize, DataTypes) {
         }
     });
 
-    Category.associate = function (models) {
+    Category.associate = (models) => {
         Category.hasMany(models.Post, {
             foreignKey: {
+                associate: "authorId",
                 allowNull: false
             }
         });
@@ -21,6 +22,7 @@ module.exports = function (sequelize, DataTypes) {
     Category.associate = function (models) {
         Category.belongsTo(models.Author, {
             foreignKey: {
+                associate: "authorId",
                 allowNull: false
             }
         });

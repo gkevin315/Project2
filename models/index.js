@@ -46,12 +46,12 @@ function User (userObj) {
 
 module.exports = User
 
-module.exports.saveUser = function(userObj, callback){
-	orm.addUserToDB(userObj, function(status, err){
-		if (err) return callback(false);
-		callback(true);
-	});
-}
+// module.exports.saveUser = function(userObj, callback){
+// 	orm.addUserToDB(userObj, function(status, err){
+// 		if (err) return callback(false);
+// 		callback(true);
+// 	});
+// }
 
 module.exports = db;
 
